@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour {
     //public float speed = .1f;
 
     public Text countText;
-    
+    float dirX;
+    float dirY;
+
     private int cout;
     private Vector2 destination = Vector2.zero;
     private Rigidbody2D rb; 
@@ -20,6 +23,7 @@ public class PlayerController : MonoBehaviour {
         cout = 0;
         setCountText();
         rb = GetComponent<Rigidbody2D>();
+        rb.freezeRotation = true;
         circleCollider = GetComponent<CircleCollider2D>();
         animator = GetComponent<Animator>();
         destination = transform.position;
@@ -31,8 +35,17 @@ public class PlayerController : MonoBehaviour {
 	}
 
     private void FixedUpdate()
-    { 
-        if(Input.GetKey(KeyCode.UpArrow) && validMove(Vector2.up))
+    {
+        //New way to move packman with button
+        //the rigidbody handles collision so packman won't go through walls
+        //Still need to fix animation direction
+        dirX = CrossPlatformInputManager.GetAxis("Horizontal");
+        dirY = CrossPlatformInputManager.GetAxis("Vertical");
+        Debug.Log(dirX);
+        rb.velocity = new Vector2(dirX * 100, dirY * 100);
+
+        //Moves packman one unit over but checks to see if it is a valid move
+        /*if(Input.GetKey(KeyCode.UpArrow) && validMove(Vector2.up))
         {
             rb.MovePosition(rb.position + Vector2.up * .2f);
             destination = rb.position + Vector2.up;
@@ -51,11 +64,12 @@ public class PlayerController : MonoBehaviour {
         {
             rb.MovePosition(rb.position + Vector2.right * .2f);
             destination = rb.position + Vector2.right;
-        }
+        }*/
 
+        /* changes the direction of the pacman animation
         Vector2 direction = destination - (Vector2)transform.position;
         animator.SetFloat("DirX", direction.x);
-        animator.SetFloat("DirY", direction.y);
+        animator.SetFloat("DirY", direction.y);*/
     }
 
     private bool validMove(Vector2 direction)
