@@ -43,6 +43,8 @@ public class PlayerController : MonoBehaviour {
         dirY = CrossPlatformInputManager.GetAxis("Vertical");
         Debug.Log(dirX);
         rb.velocity = new Vector2(dirX * 100, dirY * 100);
+        animator.SetFloat("DirX", dirX * 100);
+        animator.SetFloat("DirY", dirY * 100);
 
         //Moves packman one unit over but checks to see if it is a valid move
         /*if(Input.GetKey(KeyCode.UpArrow) && validMove(Vector2.up))
