@@ -237,6 +237,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GhostMove.cs" />
     <Compile Include="Assets\Scripts\MovingObject.cs" />
     <Compile Include="Assets\Scripts\PacdotController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
