@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour {
         {
             dataController.SubmitNewPlayerScore(cout);
             SceneManager.LoadScene("score");
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {

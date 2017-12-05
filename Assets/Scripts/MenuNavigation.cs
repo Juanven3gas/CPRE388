@@ -17,7 +17,7 @@ public class MenuNavigation : MonoBehaviour {
 
     private void setScoreText()
     {
-        highscoreText.text = "1. " + dataController.GetHighestScore().ToString();
+        highscoreText.text = "First Place: " + dataController.GetHighestScore().ToString();
     }
 
     public void MainMenu()

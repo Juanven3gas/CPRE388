@@ -243,10 +243,10 @@
     <Compile Include="Assets\Scripts\MenuNavigation.cs" />
     <Compile Include="Assets\Scripts\MenuUIManager.cs" />
     <Compile Include="Assets\Scripts\MovingObject.cs" />
-    <Compile Include="Assets\Scripts\PacdotController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerProgress.cs" />
     <Compile Include="Assets\Scripts\ScoreData.cs" />
+    <Compile Include="Assets\Scripts\SettingUIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
