@@ -245,6 +245,7 @@
     <Compile Include="Assets\Scripts\MovingObject.cs" />
     <Compile Include="Assets\Scripts\PacdotController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerProgress.cs" />
     <Compile Include="Assets\Scripts\ScoreData.cs" />
   </ItemGroup>
   <ItemGroup>

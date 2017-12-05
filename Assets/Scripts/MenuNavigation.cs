@@ -2,10 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuNavigation : MonoBehaviour {
 
-	public void MainMenu()
+    private DataController dataController;
+    public Text highscoreText;
+
+    private void Start()
+    {
+        dataController = FindObjectOfType<DataController>();
+        setScoreText();
+    }
+
+    private void setScoreText()
+    {
+        highscoreText.text = "1. " + dataController.GetHighestScore().ToString();
+    }
+
+    public void MainMenu()
     {
         SceneManager.LoadScene("menu");
     }

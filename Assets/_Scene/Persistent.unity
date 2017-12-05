@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allScoreData:
-  - playerInitials: test
+  - playerInitials: tst
     score: 50
 --- !u!4 &406365509
 Transform:

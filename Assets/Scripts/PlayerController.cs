@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.CrossPlatformInput;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     //public float speed = .1f;
@@ -16,10 +17,12 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb; 
     private CircleCollider2D circleCollider;
     private Animator animator;
+    private DataController dataController;
     
 
 	// Use this for initialization
 	void Start () {
+        dataController = FindObjectOfType<DataController>();
         cout = 0;
         setCountText();
         rb = GetComponent<Rigidbody2D>();
@@ -34,6 +37,11 @@ public class PlayerController : MonoBehaviour {
 		
 	}
 
+    public int getScore()
+    {
+        return cout;
+    }
+
     private void FixedUpdate()
     {
         //New way to move packman with button
@@ -42,7 +50,7 @@ public class PlayerController : MonoBehaviour {
         dirX = CrossPlatformInputManager.GetAxis("Horizontal");
         dirY = CrossPlatformInputManager.GetAxis("Vertical");
         Debug.Log(dirX);
-        rb.velocity = new Vector2(dirX * 100, dirY * 100);
+        rb.velocity = new Vector2(dirX * 120, dirY * 120);
         animator.SetFloat("DirX", dirX * 100);
         animator.SetFloat("DirY", dirY * 100);
 
@@ -107,9 +115,15 @@ public class PlayerController : MonoBehaviour {
             Destroy(collision.gameObject);
             setCountText();
         }
+        else if(collision.gameObject.CompareTag("Ghost"))
+        {
+            dataController.SubmitNewPlayerScore(cout);
+            SceneManager.LoadScene("score");
+            Destroy(this);
+        }
         else
         {
-
+            //Do Nothing
         }
     }
 

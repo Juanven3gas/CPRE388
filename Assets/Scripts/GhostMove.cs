@@ -30,12 +30,12 @@ public class GhostMove : MonoBehaviour {
         {
             Vector2 newPosition = Vector2.MoveTowards(transform.position, waypoints[index].position, speed);
             rb2d.MovePosition(newPosition);
-            Debug.Log("Moving towards position");
+            //Debug.Log("Moving towards position");
         }
         else
         {
             index = (index + 1) % waypoints.Length;
-            Debug.Log("New waypoint index is " + index);
+            //Debug.Log("New waypoint index is " + index);
         }
 
         Vector2 dir = waypoints[index].position - transform.position;
@@ -47,7 +47,8 @@ public class GhostMove : MonoBehaviour {
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            
+            //Destroy(collision.gameObject);
         }
     }
 }

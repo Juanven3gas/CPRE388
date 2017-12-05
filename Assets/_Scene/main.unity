@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 90353701}
   m_Layer: 0
   m_Name: Inky
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2927,7 +2927,7 @@ GameObject:
   - component: {fileID: 433500791}
   m_Layer: 0
   m_Name: Clyde
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5993,7 +5993,7 @@ GameObject:
   - component: {fileID: 714180505}
   m_Layer: 0
   m_Name: Blinky
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12855,7 +12855,7 @@ GameObject:
   - component: {fileID: 1465362492}
   m_Layer: 0
   m_Name: Pinky
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: -3839803715187477772, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
