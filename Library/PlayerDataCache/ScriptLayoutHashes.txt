@@ -1,5 +1,6 @@
 Android
 SceneListBegin?
+Assets/_Scene/menu.unity
 Assets/_Scene/main.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -149,3 +150,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 e0bcec623019e5cb3a1d280c8649ef58 Assembly-CSharp.dll:.PlayerController
 a8796ecdc9d5c260bbe32f30c4b10708 Assembly-CSharp-firstpass.dll:UnityStandardAssets.CrossPlatformInput.TouchPad
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MenuUIManager
