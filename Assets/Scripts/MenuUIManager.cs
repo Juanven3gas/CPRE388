@@ -19,4 +19,14 @@ public class MenuUIManager : MonoBehaviour {
     {
         SceneManager.LoadScene("main");
     }
+
+    public void Scores()
+    {
+        SceneManager.LoadScene("score");
+    }
+
+    public void Settings()
+    {
+        SceneManager.LoadScene("setting");
+    }
 }
