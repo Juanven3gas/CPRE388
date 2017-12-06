@@ -27,6 +27,6 @@ public class MenuUIManager : MonoBehaviour {
 
     public void Settings()
     {
-        SceneManager.LoadScene("setting");
+        SceneManager.LoadScene("settings");
     }
 }

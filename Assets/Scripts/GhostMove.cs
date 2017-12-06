@@ -5,18 +5,21 @@ using UnityEngine;
 public class GhostMove : MonoBehaviour {
 
     public Transform[] waypoints;
-    public float speed = 0.3f;
+    private float speed = 0.1f;
 
     int index = 0;
 
     private Rigidbody2D rb2d;
     private Animator animator;
+    private DataController dataController;
 
     // Use this for initialization
     void Start () {
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.freezeRotation = true;
+        dataController = FindObjectOfType<DataController>();
+        setGhostSpeed();
 	}
 	
 	// Update is called once per frame
@@ -49,6 +52,27 @@ public class GhostMove : MonoBehaviour {
         {
             
             //Destroy(collision.gameObject);
+        }
+    }
+
+    private void setGhostSpeed()
+    {
+        int difficulty = dataController.GetDifficulty();
+
+        switch (difficulty)
+        {
+            case 1:
+                speed = 0.1f;
+                break;
+            case 2:
+                speed = 0.2f;
+                break;
+            case 3:
+                speed = 0.3f;
+                break;
+            default:
+                speed = 0.1f;
+                break;
         }
     }
 }

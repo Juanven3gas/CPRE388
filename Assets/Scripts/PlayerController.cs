@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour {
         dirX = CrossPlatformInputManager.GetAxis("Horizontal");
         dirY = CrossPlatformInputManager.GetAxis("Vertical");
         Debug.Log(dirX);
-        rb.velocity = new Vector2(dirX * 120, dirY * 120);
+        rb.velocity = new Vector2(dirX * 130, dirY * 130);
         animator.SetFloat("DirX", dirX * 100);
         animator.SetFloat("DirY", dirY * 100);
 

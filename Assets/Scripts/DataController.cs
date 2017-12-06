@@ -5,21 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class DataController : MonoBehaviour {
 
-    public ScoreData[] allScoreData;
     private PlayerProgress playerProgress;
+    private playerSettings settings;
 
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(gameObject);
         LoadPlayerProgress();
+        LoadPlayerPreferece();
 
         SceneManager.LoadScene("menu");
 	}
-
-    public ScoreData getCurrentScoreData()
-    {
-        return allScoreData[0];
-    }
 
     public void SubmitNewPlayerScore(int newScore)
     {
@@ -36,6 +32,15 @@ public class DataController : MonoBehaviour {
         SavePlayerInitials();
     }
 
+    public void SubmitNewDifficultySetting(int newDifficulty)
+    {
+        if(settings.difficulty != newDifficulty)
+        {
+            settings.difficulty = newDifficulty;
+            SavePlayerSettings();
+        }
+    }
+
     public int GetHighestScore()
     {
         return playerProgress.score;
@@ -46,6 +51,11 @@ public class DataController : MonoBehaviour {
         return playerProgress.initials;
     }
 
+    public int GetDifficulty()
+    {
+        return settings.difficulty;
+    }
+
     private void SavePlayerProgress()
     {
         PlayerPrefs.SetInt("highscore1", playerProgress.score);
@@ -54,6 +64,11 @@ public class DataController : MonoBehaviour {
     private void SavePlayerInitials()
     {
         PlayerPrefs.SetString("highscore1init", playerProgress.initials);
+    }
+
+    private void SavePlayerSettings()
+    {
+        PlayerPrefs.SetInt("difficulty", settings.difficulty);
     }
 
     private void LoadPlayerProgress()
@@ -68,6 +83,16 @@ public class DataController : MonoBehaviour {
         if(PlayerPrefs.HasKey("highscore1init"))
         {
             playerProgress.initials = PlayerPrefs.GetString("highscore1init");
+        }
+    }
+
+    private void LoadPlayerPreferece()
+    {
+        settings = new playerSettings();
+
+        if(PlayerPrefs.HasKey("difficulty"))
+        {
+            settings.difficulty = PlayerPrefs.GetInt("difficulty");
         }
     }
 

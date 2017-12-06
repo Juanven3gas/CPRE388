@@ -241,11 +241,13 @@
     <Compile Include="Assets\Scripts\GameData.cs" />
     <Compile Include="Assets\Scripts\GhostMove.cs" />
     <Compile Include="Assets\Scripts\intialsUIManager.cs" />
+    <Compile Include="Assets\Scripts\MainUIManager.cs" />
     <Compile Include="Assets\Scripts\MenuNavigation.cs" />
     <Compile Include="Assets\Scripts\MenuUIManager.cs" />
     <Compile Include="Assets\Scripts\MovingObject.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerProgress.cs" />
+    <Compile Include="Assets\Scripts\playerSettings.cs" />
     <Compile Include="Assets\Scripts\ScoreData.cs" />
     <Compile Include="Assets\Scripts\SettingUIManager.cs" />
   </ItemGroup>
