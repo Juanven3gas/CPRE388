@@ -20,3 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scene/setting.unity
     guid: dfd4819bcab72ac4c871aef95c69fe91
+  - enabled: 1
+    path: Assets/_Scene/input-initials.unity
+    guid: 8ff92202a765a314c845edaf26398381

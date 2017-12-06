@@ -117,9 +117,21 @@ public class PlayerController : MonoBehaviour {
         }
         else if(collision.gameObject.CompareTag("Ghost"))
         {
-            dataController.SubmitNewPlayerScore(cout);
-            SceneManager.LoadScene("score");
-            Destroy(gameObject);
+            //The game is over so if we did get a highscore then we
+            //will submit a change int the score else we will just 
+            //show the high score page suggesting that they didn't get a highscore
+
+            if(dataController.GetHighestScore() <= cout)
+            {
+                dataController.SubmitNewPlayerScore(cout);
+                SceneManager.LoadScene("input-initials");
+                Destroy(gameObject);
+            }
+            else
+            {
+                SceneManager.LoadScene("score");
+                Destroy(gameObject);
+            }
         }
         else
         {

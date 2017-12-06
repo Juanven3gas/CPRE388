@@ -240,6 +240,7 @@
     <Compile Include="Assets\Scripts\DataController.cs" />
     <Compile Include="Assets\Scripts\GameData.cs" />
     <Compile Include="Assets\Scripts\GhostMove.cs" />
+    <Compile Include="Assets\Scripts\intialsUIManager.cs" />
     <Compile Include="Assets\Scripts\MenuNavigation.cs" />
     <Compile Include="Assets\Scripts\MenuUIManager.cs" />
     <Compile Include="Assets\Scripts\MovingObject.cs" />

@@ -30,14 +30,30 @@ public class DataController : MonoBehaviour {
         }
     }
 
+    public void submitNewPlayerInitials(string initals)
+    {
+        playerProgress.initials = initals;
+        SavePlayerInitials();
+    }
+
     public int GetHighestScore()
     {
         return playerProgress.score;
     }
 
+    public string GetInitials()
+    {
+        return playerProgress.initials;
+    }
+
     private void SavePlayerProgress()
     {
         PlayerPrefs.SetInt("highscore1", playerProgress.score);
+    }
+
+    private void SavePlayerInitials()
+    {
+        PlayerPrefs.SetString("highscore1init", playerProgress.initials);
     }
 
     private void LoadPlayerProgress()
@@ -47,6 +63,11 @@ public class DataController : MonoBehaviour {
         if(PlayerPrefs.HasKey("highscore1"))
         {
             playerProgress.score = PlayerPrefs.GetInt("highscore1");
+        }
+
+        if(PlayerPrefs.HasKey("highscore1init"))
+        {
+            playerProgress.initials = PlayerPrefs.GetString("highscore1init");
         }
     }
 
