@@ -68,7 +68,7 @@ public class GhostMove : MonoBehaviour {
                 speed = 0.2f;
                 break;
             case 3:
-                speed = 0.3f;
+                speed = 0.25f;
                 break;
             default:
                 speed = 0.1f;
